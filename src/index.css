@@ -196,6 +196,20 @@ a {
   font-size: 12px;
 }
 
+.filter-h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#filter {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+}
 
 .content-section {
   margin: 40px 0;
@@ -261,6 +275,8 @@ a {
   margin-top: 10px;
   display: inline-block;
 }
+
+
 
 /* Responsividade */
 @media (max-width: 768px) {

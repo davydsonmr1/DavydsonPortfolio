@@ -40,10 +40,49 @@ a {
 .header-banner {
   width: 100%;
   height: 200px;
-  background-color: #e6f3ff;
+  background: linear-gradient(175deg, #ff1493, #0b193f);
   border-radius: 8px;
   overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-banner h1 {
+  font-size: 36px;
+  color: white;
+  background-clip: text;
+  animation: text-flicker 3s linear infinite;
+}
+
+@keyframes text-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.header-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><circle cx="400" cy="300" r="2" fill="white" /><circle cx="200" cy="100" r="2" fill="white" /><circle cx="600" cy="500" r="2" fill="white" /><circle cx="300" cy="400" r="2" fill="white" /><circle cx="500" cy="200" r="2" fill="white" /></svg>') repeat;
+  animation: stars 5s linear infinite;
+}
+
+@keyframes stars {
+  from {
+    background-position: -800px -600px;
+  }
+  to {
+    background-position: 0 0;
+  }
 }
 
 .header-banner img {
@@ -86,6 +125,20 @@ a {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  position: relative;
+}
+
+.profile-name svg {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .profile-tagline {
@@ -220,6 +273,21 @@ a {
   font-size: 24px;
 }
 
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.content-section h1 .wave {
+  display: inline-block;
+  animation: wave 2s infinite;
+}
 
 .post-list {
   display: flex;

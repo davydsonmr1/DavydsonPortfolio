@@ -13,7 +13,6 @@ function Feed() {
             Saiba mais
           </a> */}
         </article>
-        
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ function App() {
       <div className="container">
         <header className="header">
           <div className="header-banner">
-            <img src="/assets/595291.png" alt="foto-banner" />
+            <h1> Code is Poetry </h1>
           </div>
 
           <a
@@ -47,13 +47,11 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <LinkIcon size={16} /> links
+                <LinkIcon size={16} /> Contato
               </a>
               
             </div>
           </div>
-
-          
 
           <nav className="nav">
             <NavLink

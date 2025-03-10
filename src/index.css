@@ -5,6 +5,20 @@
   --secondary-bg: #2a2a2a;
 }
 
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #ff1493;
+  --secondary-bg: #2a2a2a;
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #ff1493;
+  --secondary-bg: #f0f0f0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -31,6 +45,17 @@ a {
   padding: 0 20px;
 }
 
+.theme-toggle-button {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
 .header {
   position: relative;
@@ -320,7 +345,7 @@ a {
 .follow-button {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 60px;
   padding: 8px 16px;
   background-color: var(--accent-color);
   border-radius: 20px;
@@ -346,7 +371,6 @@ a {
 
 
 
-/* Responsividade */
 @media (max-width: 768px) {
   .container {
     padding: 0 10px;
@@ -357,8 +381,8 @@ a {
   }
   
   .follow-button {
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 50px;
   }
 
   .subscribe form {

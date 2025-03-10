@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   NavLink,
 } from "react-router-dom";
-import { Instagram, Atom,  Link as LinkIcon } from "lucide-react";
+import { Instagram, Atom, Link as LinkIcon, Sun, Moon } from "lucide-react";
 import Feed from "./components/Feed";
 import About from "./components/About";
 import Content from "./components/Content";
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
+  };
+
   return (
     <Router>
       <div className="container">
@@ -19,14 +29,19 @@ function App() {
             <h1> Code is Poetry </h1>
           </div>
 
-          <a
-            href="https://www.instagram.com/davydsonmaciel/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="follow-button"
-          >
-            <Instagram size={16} /> Follow
-          </a>
+          <div className="follow-section">
+            <a
+              href="https://www.instagram.com/davydsonmaciel/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="follow-button"
+            >
+              <Instagram size={16} /> Follow
+            </a>
+            <button className="theme-toggle-button" onClick={toggleTheme}>
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+          </div>
 
           <div className="profile-section">
             <img src='/assets/foto-perfil.png' alt="Davydson Maciel" className="profile-image" />

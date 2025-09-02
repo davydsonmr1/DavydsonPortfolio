@@ -52,17 +52,18 @@ function App() {
               Vamos criar algo juntos  {" "}
             </p>
             <p className="profile-bio">
-              Fullstack developer apaixonado por criar experiências digitais
-              incríveis!
+              Programador de Sistemas I com foco em PowerBuilder e Oracle SQL. <br />
+              Atualmente no Squad da Voltz, atuando com Typescript, NestJS e NextJS.
+              Cursando Tecnologia em Análise e Desenvolvimento de Sistemas na Unifran/Cataguases e o curso técnico em Desenvolvimento de Sistemas pelo SENAI, em parceria com o Grupo Energisa. Busco continuamente aprimorar minhas habilidades em programação e desenvolvimento de software, com experiência prática em criação de interfaces modernas e responsivas.
             </p>
             <div className="profile-meta">
               
               <a
-                href="https://linkme.bio/davydsonmr"
+                href="https://www.linkedin.com/in/davydsonmaciel/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <LinkIcon size={16} /> Contato
+                <LinkIcon size={16} /> Linkedin
               </a>
               
             </div>
@@ -75,7 +76,7 @@ function App() {
                 isActive ? "nav-link active" : "nav-link"
               }
             >
-              Feed
+              Linha do Tempo
             </NavLink>
             <NavLink
               to="/about"

@@ -9,6 +9,8 @@ import { Instagram, Atom, Link as LinkIcon, Sun, Moon } from "lucide-react";
 import Feed from "./components/Feed";
 import About from "./components/About";
 import Content from "./components/Content";
+import Teste from "./components/teste";
+import Media from "./components/media"; 
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -44,7 +46,7 @@ function App() {
           </div>
 
           <div className="profile-section">
-            <img src='/assets/foto-perfil.png' alt="Davydson Maciel" className="profile-image" />
+            <img src='/assets/503615364_17971279187860441_8223247184359940490_n.jpg' alt="Davydson Maciel" className="profile-image" />
             <h1 className="profile-name">
              Davydson Maciel  <Atom  size={20} color="#ff1493" />
             </h1>
@@ -94,6 +96,22 @@ function App() {
             >
               Projetos
             </NavLink>
+            <NavLink
+              to="/teste"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Testes e Reflexões
+            </NavLink>
+            <NavLink
+              to="/media"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Mídia
+            </NavLink>
             
           </nav>
         </header>
@@ -103,8 +121,10 @@ function App() {
             <Route path="/" element={<Feed />} />
             <Route path="/about" element={<About />} />
             <Route path="/content" element={<Content />} />
-          </Routes>
-        </main>
+            <Route path="/teste" element={<Teste />} />
+            <Route path="/media" element={<Media />} />
+            </Routes>
+          </main>
       </div>
     </Router>
   );

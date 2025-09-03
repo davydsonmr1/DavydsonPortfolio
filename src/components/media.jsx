@@ -39,7 +39,7 @@ function Media() {
                   {isPlaying ? "Pause" : "Play"}
                 </button>
                 <audio id="audioPlayer" className="w-full" controls>
-                  <source src="/path/to/your/music.mp3" type="audio/mp3" />
+                  <source src="/assets/echoes.mp3" type="audio/mp3" />
                   Seu navegador não suporta o elemento de áudio.
                 </audio>
               </div>

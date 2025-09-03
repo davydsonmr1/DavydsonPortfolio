@@ -3,65 +3,50 @@ import React, { useState } from "react";
 
 
 function Media() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const audioElement = document.getElementById("audioPlayer");
+    if (isPlaying) {
+      audioElement.pause();
+    } else {
+      audioElement.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+  
   return (
     <>
     <div className="content-section">
       <div className="post-list">
         <article className="post-item">
-          <h2>Pontos a melhorar :</h2>
+          <h2>Imagens que expressam minha identidade:</h2>
           <div className="timeline">
-            <div className="timeline-item">
-              <span className="timeline-content">
-                - Preciso melhorar minha organização e planejamento de estudos.
-              </span>
-              <span className="timeline-content">
-                - Meu foco e concentração durante os estudos podem ser aprimorados.
-              </span>
-              <span className="timeline-content">
-                - Meu back-end precisa ser aprimorado.
-              </span>
+            <div className="timeline-item-img">
+              <img className="timeline-content-img" src="/assets/code.jfif" alt="Descrição da imagem 1" />
+              <img className="timeline-content-img" src="/assets/flamengo.jpeg" alt="Descrição da imagem 2" />
+              <img className="timeline-content-img" src="/assets/universo.jpg" alt="Descrição da imagem 3" />
+              <img className="timeline-content-img" src="/assets/controle.webp" alt="Descrição da imagem 4" />
             </div>
           </div>
-        </article>
-      </div>
-    </div>
-     <div className="content-section">
-      <div className="post-list">
-        <article className="post-item">
-          <h2>Sonhos e Objetivos Futuros :</h2>
-          <div className="timeline">
-            <div className="timeline-item">
-              <span className="timeline-content">
-                - Formar na faculdade de Análise e Desenvolvimento de Sistemas.
-              </span>
-              <span className="timeline-content">
-                - Conseguir me especializar na area de desenvolvimento.
-              </span>
-              <span className="timeline-content">
-                - Consolidar minha empresa HDL Soluções na área de tecnologia.
-              </span>
+        <div className="music-player mt-8 p-4 bg-gray-800 rounded-lg">
+              <h3 className="text-white mb-4">Minha Musica Favorita</h3>
+              <div className="flex items-center justify-center gap-4">
+                <button
+                  onClick={togglePlay}
+                  className="botton-player bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full focus:outline-none"
+                >
+                  {isPlaying ? "Pause" : "Play"}
+                </button>
+                <audio id="audioPlayer" className="w-full" controls>
+                  <source src="/path/to/your/music.mp3" type="audio/mp3" />
+                  Seu navegador não suporta o elemento de áudio.
+                </audio>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
-    </div>
-    <div className="content-section">
-      <div className="post-list">
-        <article className="post-item">
-          <h2>Frases e inspirações :</h2>
-          <div className="timeline">
-            <div className="timeline-item">
-              <span className="timeline-content">
-                - Não importa que você vá devagar, contanto que você não pare.  Confúcio
-              </span>
-              <span className="timeline-content">
-                - Coragem é saber o que não temer. Platão
-              </span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
     </>
   );
 }
